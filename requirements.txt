@@ -1,0 +1,8 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+imap-tools
+python-dotenv
+google-genai
+apscheduler
+psycopg2-binary
