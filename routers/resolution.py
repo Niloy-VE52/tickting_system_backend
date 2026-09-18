@@ -4,12 +4,8 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
-try:
-    from backend.models import Ticket, TicketStatus, get_db
-    from backend.notifier import send_team_resolution_and_close
-except ImportError:
-    from models import Ticket, TicketStatus, get_db
-    from notifier import send_team_resolution_and_close
+from models import Ticket, TicketStatus, get_db
+from notifier import send_team_resolution_and_close
 
 logger = logging.getLogger("resolution")
 router = APIRouter(prefix="/tickets", tags=["resolution"])

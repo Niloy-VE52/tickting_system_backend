@@ -3,12 +3,8 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
-try:
-    from backend.models import Ticket, TicketStatus, get_db
-    from backend.ticket_service import confirm_fix
-except ImportError:
-    from models import Ticket, TicketStatus, get_db
-    from ticket_service import confirm_fix
+from models import Ticket, TicketStatus, get_db
+from ticket_service import confirm_fix
 
 router = APIRouter(prefix="/tickets", tags=["tickets"])
 

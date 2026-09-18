@@ -10,7 +10,7 @@ sys.path.insert(0, str(BACKEND_DIR.parent))
 os.environ["AUTH_SECRET_KEY"] = "9f8c6b71e35a4d2f098c1a7e5b3d2c1f4e6a8b0c2d4e6f8a0b2c4d6e8f0a2b4c"
 
 from fastapi.testclient import TestClient
-from backend.main import app
+from main import app
 
 client = TestClient(app)
 

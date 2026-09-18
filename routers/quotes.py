@@ -4,12 +4,8 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
-try:
-    from backend.models import Ticket, TicketStatus, get_db
-    from backend.notifier import send_acknowledgement_and_quote
-except ImportError:
-    from models import Ticket, TicketStatus, get_db
-    from notifier import send_acknowledgement_and_quote
+from models import Ticket, TicketStatus, get_db
+from notifier import send_acknowledgement_and_quote
 
 logger = logging.getLogger("quotes")
 router = APIRouter(prefix="/tickets", tags=["quotes"])

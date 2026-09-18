@@ -1,14 +1,9 @@
 import logging
 from apscheduler.schedulers.background import BackgroundScheduler
 
-try:
-    from backend.models import SessionLocal
-    from backend.mail_fetcher import fetch_mail
-    from backend.ticket_service import process_incoming_mail, sweep_overdue_tickets
-except ImportError:
-    from models import SessionLocal
-    from mail_fetcher import fetch_mail
-    from ticket_service import process_incoming_mail, sweep_overdue_tickets
+from models import SessionLocal
+from mail_fetcher import fetch_mail
+from ticket_service import process_incoming_mail, sweep_overdue_tickets
 
 logger = logging.getLogger("scheduler")
 scheduler = BackgroundScheduler()

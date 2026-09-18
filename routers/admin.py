@@ -4,12 +4,8 @@ from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from sqlalchemy.orm import Session
 
-try:
-    from backend.models import Ticket, TicketStatus, get_db
-    from backend.scheduler import poll_mailbox_job
-except ImportError:
-    from models import Ticket, TicketStatus, get_db
-    from scheduler import poll_mailbox_job
+from models import Ticket, TicketStatus, get_db
+from scheduler import poll_mailbox_job
 
 logger = logging.getLogger("admin")
 router = APIRouter(prefix="/admin", tags=["admin"])

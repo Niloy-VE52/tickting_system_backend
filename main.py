@@ -17,14 +17,9 @@ load_dotenv(ROOT_DIR / ".env")
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-try:
-    from backend import scheduler
-    from backend.models import init_db
-    from backend.routers import admin, auth, quotes, resolution, tickets
-except ImportError:
-    import scheduler
-    from models import init_db
-    from routers import admin, auth, quotes, resolution, tickets
+import scheduler
+from models import init_db
+from routers import admin, auth, quotes, resolution, tickets
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("main")

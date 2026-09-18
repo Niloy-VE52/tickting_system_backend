@@ -1,18 +1,11 @@
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 
-try:
-    from backend.auth_service import (
-        DEFAULT_USERS,
-        generate_token,
-        get_current_user,
-    )
-except ImportError:
-    from auth_service import (
-        DEFAULT_USERS,
-        generate_token,
-        get_current_user,
-    )
+from auth_service import (
+    DEFAULT_USERS,
+    generate_token,
+    get_current_user,
+)
 
 router = APIRouter(prefix="/auth", tags=["auth"])
 

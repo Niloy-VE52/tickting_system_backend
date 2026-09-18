@@ -3,9 +3,9 @@ from datetime import datetime, timedelta
 
 from sqlalchemy.orm import Session
 
-from backend.classifier import classify_issue
-from backend.models import Ticket, TicketStatus
-from backend.notifier import notify_team
+from classifier import classify_issue
+from models import Ticket, TicketStatus
+from notifier import notify_team
 
 logger = logging.getLogger("ticket_service")
 
